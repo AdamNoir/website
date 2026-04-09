@@ -1,0 +1,30 @@
+---
+interface Props {
+  name: string;
+  description: string;
+  tags: string[];
+  liveUrl: string;
+  sourceCodeUrl: string;
+}
+const { name, description = '', tags, liveUrl, sourceCodeUrl } = Astro.props;
+---
+
+<div class="proj-card">
+  <h3>{name}</h3>
+  <p>
+    {description}
+  </p>
+  <div class="proj-tags">
+    {
+      tags.map((tag) => {
+        return <span class="proj-tag">{tag}</span>;
+      })
+    }
+  </div>
+  <hr class="proj-divider" />
+  <div class="proj-btns">
+    <a href=`${sourceCodeUrl}` target="_blank" class="btn-source">Source Code</a
+    >
+    <a href=`${liveUrl}` target="_blank" class="btn-preview">Live Preview</a>
+  </div>
+</div>

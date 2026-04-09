@@ -1,0 +1,39 @@
+---
+const currentPath = Astro.url.pathname;
+---
+
+<nav>
+  <div class="nav-inner">
+    <a style="text-decoration: none;" href="/" class="nav-logo"
+      >Ivan Gutierrez</a
+    >
+
+    <div class="nav-links">
+      <a href="/" class={currentPath === '/' ? 'active' : ''}>Home</a>
+      <a href="/projects" class={currentPath === '/projects' ? 'active' : ''}
+        >Projects</a
+      >
+    </div>
+
+    <button class="hamburger" id="hamburger" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+
+  <div class="mobile-menu" id="mobile-menu">
+    <a href="/" class={currentPath === '/' ? 'active' : ''}>Home</a>
+    <a href="/projects" class={currentPath === '/projects' ? 'active' : ''}
+      >Projects</a
+    >
+  </div>
+</nav>
+
+<script>
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobile-menu');
+
+  hamburger?.addEventListener('click', () => {
+    hamburger.classList.toggle('open');
+    mobileMenu?.classList.toggle('open');
+  });
+</script>

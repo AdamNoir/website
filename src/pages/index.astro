@@ -1,17 +1,23 @@
 ---
-
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Navbar from '../components/Navbar.astro';
+import SocialMedia from '../components/SocialMedia.astro';
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<BaseLayout title="Home">
+  <Navbar />
+  <section class="page active" id="home">
+    <div class="home-inner">
+      <div class="photo-wrap">
+        <img src="/public/03.jpg" alt="Ivan Gutierrez" />
+      </div>
+
+      <div class="home-text">
+        <h1>Hello, I'm Ivan Gutierrez</h1>
+        <p class="subtitle">Just your average software engineer</p>
+
+        <SocialMedia />
+      </div>
+    </div>
+  </section>
+</BaseLayout>
