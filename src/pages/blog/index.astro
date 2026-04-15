@@ -1,0 +1,23 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import Navbar from '../../components/Navbar.astro';
+import BlogPost from '../../components/BlogPost.astro';
+import { getCollection } from 'astro:content';
+
+const posts = await getCollection('blog');
+---
+
+<BaseLayout title="Blog">
+  <Navbar />
+  <section class="blog-main">
+    <h1 class="blog-title">Blog</h1>
+    <p class="blog-desc">
+      Welcome to my blog. Here I'll post anything that I find even remotely
+      interesting... or anything that makes me look smart. Allons-y!
+    </p>
+
+    <div class="post-list">
+      {posts.map((post) => <BlogPost post={post} />)}
+    </div>
+  </section>
+</BaseLayout>
