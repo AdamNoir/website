@@ -43,4 +43,46 @@ const { Content, headings } = await render(post);
       </div>
     </article>
   </main>
+  <script>
+    // ── TOC colapsable en móvil ──
+    const toggleBtn = document.getElementById('toc-toggle');
+    const tocNav = document.getElementById('toc-nav');
+
+    toggleBtn?.addEventListener('click', () => {
+      const isOpen = tocNav?.classList.toggle('open');
+      toggleBtn.classList.toggle('open', isOpen);
+      toggleBtn.setAttribute('aria-expanded', String(isOpen));
+    });
+
+    // Cerrar al navegar (móvil)
+    tocNav?.querySelectorAll('.toc-link').forEach((link) => {
+      link.addEventListener('click', () => {
+        if (window.innerWidth <= 768) {
+          tocNav.classList.remove('open');
+          toggleBtn?.classList.remove('open');
+          toggleBtn?.setAttribute('aria-expanded', 'false');
+        }
+      });
+    });
+
+    // ── Active link al hacer scroll ──
+    const headingEls = document.querySelectorAll('.post-body h2[id]');
+    const tocLinks = document.querySelectorAll('.toc-link');
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            tocLinks.forEach((l) => l.classList.remove('active'));
+            document
+              .querySelector(`.toc-link[href="#${entry.target.id}"]`)
+              ?.classList.add('active');
+          }
+        });
+      },
+      { rootMargin: '-15% 0px -75% 0px' },
+    );
+
+    headingEls.forEach((el) => observer.observe(el));
+  </script>
 </BaseLayout>

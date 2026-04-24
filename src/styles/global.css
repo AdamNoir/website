@@ -372,6 +372,8 @@
   font-size: clamp(1.8rem, 5vw, 2.8rem);
   color: var(--teal);
   margin-bottom: 1rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
 }
  
 .blog-desc {
@@ -381,6 +383,8 @@
   line-height: 1.75;
   letter-spacing: 0.02em;
   margin-bottom: 2.5rem;
+  margin-left: 1rem;
+  margin-right: 1rem;
   max-width: 640px;
 }
  
@@ -389,6 +393,7 @@
   display: flex;
   flex-direction: column;
   gap: 12px;
+  margin: 10px;
 }
  
 .post-card {
@@ -535,50 +540,58 @@
   }
  
   /* ── TOC ── */
-  .toc {
-    flex-shrink: 0;
-    width: 200px;
-    background: var(--card);
-    border: 1px solid var(--border);
-    border-radius: 14px;
-    padding: 1.4rem 1.5rem;
-    position: sticky;
-    top: 76px;
-    display: flex;
-    flex-direction: column;
-    gap: 0.75rem;
-  }
+.toc {
+  flex-shrink: 0;
+  width: 210px;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 1.4rem 1.5rem;
+  position: sticky;
+  top: 76px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
  
-  .toc-label {
-    font-family: 'Cinzel Decorative', serif;
-    font-size: 0.8rem;
-    color: var(--teal);
-    letter-spacing: 0.04em;
-    margin-bottom: 0.25rem;
-  }
+.toc-label {
+  font-family: 'Cinzel Decorative', serif;
+  font-size: 0.78rem;
+  color: var(--teal);
+  letter-spacing: 0.06em;
+}
  
-  .toc nav {
-    display: flex;
-    flex-direction: column;
-    gap: 2px;
-  }
+.toc nav {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
  
-  .toc-link {
-    font-family: 'Cinzel', serif;
-    font-size: 0.78rem;
-    color: var(--teal-dim);
-    text-decoration: none;
-    letter-spacing: 0.04em;
-    padding: 5px 8px;
-    border-radius: 6px;
-    transition: color 0.2s, background 0.2s;
-  }
+.toc-link {
+  font-family: 'Cinzel', serif;
+  font-size: 0.78rem;
+  color: var(--teal-dim);
+  text-decoration: none;
+  letter-spacing: 0.03em;
+  line-height: 1.4;
+  padding: 6px 10px;
+  border-radius: 6px;
+  border-left: 2px solid transparent;
+  transition: color 0.2s, background 0.2s, border-color 0.2s;
+  display: block;
+}
  
-  .toc-link:hover,
-  .toc-link.active {
-    color: var(--teal);
-    background: var(--teal-bg);
-  }
+.toc-link:hover {
+  color: var(--teal);
+  background: var(--teal-bg);
+  border-left-color: var(--teal-dim);
+}
+ 
+.toc-link.active {
+  color: var(--teal);
+  background: var(--teal-bg);
+  border-left-color: var(--teal);
+}
  
   /* ── ARTICLE ── */
   .post-content {
@@ -630,6 +643,30 @@
     line-height: 1.85;
     letter-spacing: 0.02em;
   }
+
+  .post-body a {
+  color: var(--teal);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: opacity 0.2s;
+}
+ 
+.post-body a:hover { opacity: 0.75; }
+
+.post-body pre {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 1rem 1.25rem;
+  overflow-x: auto;
+  font-size: 0.82rem;
+  line-height: 1.65;
+}
+ 
+.post-body code {
+  font-family: 'Courier New', monospace;
+  color: var(--teal);
+}
 
 
 
