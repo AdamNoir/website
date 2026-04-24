@@ -592,6 +592,7 @@
   background: var(--teal-bg);
   border-left-color: var(--teal);
 }
+
  
   /* ── ARTICLE ── */
   .post-content {
@@ -679,18 +680,6 @@
     }
  
     .toc {
-      width: 100%;
-      position: static;
-    }
- 
-    .toc nav {
-      flex-direction: row;
-      flex-wrap: wrap;
-      gap: 6px;
-    }
- 
-    .toc-link {
-      border: 1px solid var(--border);
-      background: var(--teal-bg);
-    }
+    display: none;
+  }
   }
