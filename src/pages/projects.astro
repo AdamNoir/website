@@ -1,7 +1,11 @@
 ---
+import { getCollection } from 'astro:content';
 import Navbar from '../components/Navbar.astro';
 import ProjectCard from '../components/ProjectCard.astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
+
+const projects = await getCollection('project');
+
 ---
 
 <BaseLayout title="Projects">
@@ -11,28 +15,22 @@ import BaseLayout from '../layouts/BaseLayout.astro';
       <h2>Projects</h2>
 
       <div class="projects-grid">
-        <ProjectCard
-          name="Portfolio Website"
+        {
+          projects.map((project) => (
+            <ProjectCard
+          name={project.data.name}
           ,
-          description="A minimalist portfolio developed with Astro and pure CSS, powered by the PNPM package manager."
+          description={project.data.description}
           ,
-          tags={['AstroJS', 'CSS']}
+          tags={project.data.tags}
           ,
-          liveUrl="https://benevolent-jalebi-319ca3.netlify.app"
+          liveUrl={project.data.liveUrl}
           ,
-          sourceCodeUrl="https://github.com/AdamNoir/website.git"
+          sourceCodeUrl={project.data.sourceCodeUrl}
         />
-        <ProjectCard
-          name="Literature Blog"
-          ,
-          description="A clean and minimalist literature blog for a university club"
-          ,
-          tags={['AstroJS', 'CSS']}
-          ,
-          liveUrl="https://elaborate-starship-333f0e.netlify.app/"
-          ,
-          sourceCodeUrl="https://github.com/AdamNoir/fime-blog.git"
-        />
+          ))
+        }
+        
       </div>
     </div>
   </section>

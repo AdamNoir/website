@@ -1,0 +1,26 @@
+[
+  {
+    "id": "github",
+    "icon": "/icons/github.svg",
+    "url": "https://github.com/AdamNoir",
+    "label": "Github"
+  },
+  {
+    "id": "instagram",
+    "icon": "/icons/instagram.svg",
+    "url": "https://www.instagram.com/iamadamnoir?igsh=NHVoODF5azYzeG92&utm_source=qr",
+    "label": "Instagram"
+  },
+  {
+    "id": "twitter",
+    "icon": "/icons/twitter.svg",
+    "url": "https://x.com/adamnoir335?s=21",
+    "label": "Twitter"
+  },
+  {
+    "id": "mail",
+    "icon": "/icons/mail.svg",
+    "url": "mailto:ivangutierrez335@icloud.com",
+    "label": "Mail"
+  }
+]

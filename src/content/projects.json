@@ -1,0 +1,18 @@
+[
+    {
+        "id": "1",
+        "name": "Portfolio Website",
+        "description": "A minimalist portfolio developed with Astro and pure CSS, powered by the PNPM package manager.",
+        "tags": ["AstroJS", "CSS"],
+        "liveUrl": "https://benevolent-jalebi-319ca3.netlify.app",
+        "sourceCodeUrl": "https://github.com/AdamNoir/website.git"
+    },
+    {
+        "id": "2",
+        "name": "Literature Blog",
+        "description": "A clean and minimalist literature blog for a university club",
+        "tags": ["AstroJS", "CSS"],
+        "liveUrl": "https://elaborate-starship-333f0e.netlify.app/",
+        "sourceCodeUrl": "https://github.com/AdamNoir/fime-blog.git"
+    }
+]
