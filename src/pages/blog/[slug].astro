@@ -1,0 +1,47 @@
+---
+import type { GetStaticPaths } from 'astro';
+import Navbar from '../../components/Navbar.astro';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection, render } from 'astro:content';
+
+export const getStaticPaths = (async () => {
+  const blogPost = await getCollection('blog');
+  return blogPost.map((post) => {
+    return {
+      params: { slug: post.id },
+      props: { post: post },
+    };
+  });
+}) satisfies GetStaticPaths;
+const { post } = Astro.props;
+const { Content, headings } = await render(post);
+---
+
+<BaseLayout title="Post Title">
+  <Navbar />
+  <main class="post-main">
+    <aside class="toc">
+      <span class="toc-label">Table of content</span>
+      <p>
+        {
+          headings.map((h) => (
+            <a href={`#${h.slug}`} class="toc-link">
+              {h.text}
+            </a>
+          ))
+        }
+      </p>
+    </aside>
+
+    <article class="post-content">
+      <h1 class="post-title-content">{post.data.title}</h1>
+      <p class="post-subtitle-content">{post.data.description}</p>
+      <hr class="post-divider" />
+
+      <div class="post-body">
+        <Content />
+      </div>
+    </article>
+  </main>
+  <script src="../../scripts/toc.js"></script>
+</BaseLayout>
