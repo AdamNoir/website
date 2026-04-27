@@ -2,8 +2,6 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import Navbar from '../components/Navbar.astro';
 import SocialMedia from '../components/SocialMedia.astro';
-import { Image } from 'astro:assets';
-import myProfilePic from '../../public/profile-pic.jpg';
 ---
 
 <BaseLayout title="Home">
@@ -11,12 +9,7 @@ import myProfilePic from '../../public/profile-pic.jpg';
   <section class="page active" id="home">
     <div class="home-inner">
       <div class="photo-wrap">
-        <Image
-          src={myProfilePic}
-          alt="Kaiser Profile pic"
-          quality={'max'}
-          format={'avif'}
-        />
+        <img src="profile-pic.jpg" alt="Kaiser Profile pic" />
       </div>
 
       <div class="home-text">
