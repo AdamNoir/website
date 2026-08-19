@@ -14,5 +14,13 @@
         "tags": ["AstroJS", "CSS"],
         "liveUrl": "https://imaginantesfime.netlify.app",
         "sourceCodeUrl": "https://github.com/AdamNoir/fime-blog.git"
+    },
+    {
+        "id": "3",
+        "name": "Y2K Cosplay Blog",
+        "description": "Y2K-style blog for a cosplayer, featuring an image gallery and upcoming events.",
+        "tags": ["AstroJS", "CSS"],
+        "liveUrl": "https://blueberry-icecherry-cosplay.netlify.app/",
+        "sourceCodeUrl": "https://github.com/AdamNoir/blueberry-icecherry_y2k-blog"
     }
 ]
